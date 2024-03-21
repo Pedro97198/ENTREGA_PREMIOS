@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import urllib
 from urllib.parse import urlparse
 
+#Define the request logic
 def getdata(url):
   headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0'}
 
@@ -13,11 +14,15 @@ def getdata(url):
 
   return response.text, domain
 
-
+# URL we are goint to work with 
 # url = 'https://www.supercoloring.com/es/dibujos-para-colorear/ciencia-y-educacion/alfabetos/asl-alphabet-american-sign-language'#/robots.txt '
 url = 'https://www.fundacioncnse.org/educa/bancolse/dactilologico.php#gsc.tab=0'
 htmldata = getdata(url)[0]
+
+#Initializating BeautifulSoup
 soup = BeautifulSoup(htmldata, 'html.parser')
+
+#Making the scraping logic
 it = 0
 for item in soup.find_all('img'):
   print(item['src'], type(item['src']))
@@ -35,5 +40,6 @@ for item in soup.find_all('img'):
         it += 1
 
   else:
+    #Tipical "No hay ná" situation 
     print('No hay ná')
 
