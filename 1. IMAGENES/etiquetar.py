@@ -20,7 +20,7 @@ def rename_images_in_folders(parent_folder):
                 print(f'Renombrado {file_name} a {new_file_name}')
 
 # Especificar la carpeta principal
-parent_folder = 'limited'
+parent_folder = '4. KAGGLE LIMITADO'
 
 # Llamar a la función para renombrar las imágenes en cada carpeta
 rename_images_in_folders(parent_folder)

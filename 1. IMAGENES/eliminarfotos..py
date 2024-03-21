@@ -24,7 +24,7 @@ def limit_images_per_folder(parent_folder, limit_per_folder=10):
                 shutil.copy(file_path, limited_folder_path)
 
 # Especificar la carpeta principal
-parent_folder = 'Image'
+parent_folder = '3. FOTOS KAGGLE'
 
 # Llamar a la función para limitar el número de imágenes por carpeta
 limit_images_per_folder(parent_folder)

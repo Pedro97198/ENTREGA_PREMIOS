@@ -34,8 +34,8 @@ def filter_images(source_folder, destination_folder):
         print(f'Copiada imagen {file} a "{destination_folder}"')
 
 # Especificar las carpetas de origen y destino
-source_folder = 'images'
-destination_folder = 'filtered_images'
+source_folder = '0. GOBIERNO'
+destination_folder = '1. GOBIERNO-FILTRADO'
 
 # Llamar a la función para filtrar las imágenes y copiarlas
 filter_images(source_folder, destination_folder)
