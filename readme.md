@@ -1,25 +1,24 @@
-Proyecto de classificacion de imagenes 
-Relaizado por: Ignacio Donderis, Miguel Santiago y Pedro Torrijos
+Classification of Sign Language Images
 
-Primera parte (Web Scraping)
-    Aqui es donde nos encontramos el primer problema, las fotos que teniamos eran sobre palabras enteras, no sobre las letras en si. Esto no era lo idoneo para crear el modelo.
+Team Members: Ignacio Donderis, Miguel Santiago, Pedro Torrijos
 
-Segunda parte (Web Scraping)
-    Descargamos de una pagina del gobierno con webscraping fotos de el abecedario del lenguaje de signos. Creamos un codigo de python que descarga las fotos otro codigo que etiqueta las palabras segun la etiqueta de la propia web y filtramos para quedarnos unicamente con las fotos que muestran a la persona con su signo. 
+First Part (Web Scraping)
+    Here is where we encountered the first problem. The images we had were of entire words, not individual letters. This was not ideal for creating the model.
 
-Tercera parte (Primer modelo Roboflow)
-    Creamos el modelo con las imagenes que hemos sacado que eran un total de 32 imagenes, por consecuencia, al tener tan pocas imagenes el modelo no era funcional dando una precisión demasiado baja.
+Second Part (Web Scraping)
+    We downloaded images of the sign language alphabet from a government website using web scraping. We created Python code to download the images, another code to label the words according to the website's tags, and filtered to keep only the photos showing the person with the sign.
 
-Cuarta parte (Kaggle)
-    Descargamos las imagenes de kaggle con la intención de crear un html, volcar las imagenes en el html y poder hacer el webscraping. Pero este tampoco funciono, por problemas a la hora de crear la pagina web. (Subir imagenes a la pagina web). Por lo que usamos las imagenes directamente.
+Third Part (First Model on Roboflow)
+    We attempted to create the model with the images we had, which totaled 32 images. Due to the small number of images, the model was not functional, resulting in unacceptably low accuracy.
 
-Quinta parte (EDA)
-    Al descargar las imagenes vienen metidas en carpetas por su letra, pero el nombre del png es un numero y no nos servia para luego etiquetar en Roboflow, por lo que creeamos un codigo que utuliza el nombre de esa carpeta para nombrar correctamente las fotos. 
-    Al haber limitaciones con el tiempo que tarda roboflow en procesar las imagenes optamos por reducir la cantidad de imagenes por 10 por cada letra.
+Fourth Part (Kaggle)
+    We tried to download images from Kaggle with the intention of creating an HTML, dumping the images into the HTML, and performing web scraping. However, this approach also failed due to problems creating the webpage (uploading images to the webpage). Therefore, we used the images directly.
 
-Sexta parte (Segundo modelo Roboflow)
-    Subimos las imagenes las etiquetamos dentro de Roboflow (Asignando 1/3 por persona) y creamos el modelo el cual nos da una precisión de 77.9. Comprobando el modelo con la herramiente que nos proporciona roboflow para usar la camara del movil.
+Fifth Part (EDA)
+    Upon downloading the images, they were organized into folders by letter, but the PNG filenames were numbers, which were not suitable for labeling in Roboflow. Therefore, we created a code that utilizes the name of the folder to properly name the photos. Due to time limitations with Roboflow processing images, we opted to reduce the number of images by 10 for each letter.
 
-Septima parte (Hugging face)
-    Buscamos un modelo preentrenado en la pagina, este clasifica las imagenes en grupos segun el signo.
-    https://huggingface.co/RavenOnur/Sign-Language
+Sixth Part (Second Model on Roboflow)
+    We uploaded the images, labeled them within Roboflow (assigning 1/3 for each person), and created the model, which gave us an accuracy of 77.9%. We tested the model using the tool provided by Roboflow to use the mobile phone camera.
+
+Seventh Part (Hugging Face)
+    We searched for a pre-trained model on the Hugging Face website, which classifies images into groups according to the sign.
