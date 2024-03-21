@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imágenes</title>
+<style>
+    .folder {
+        margin-bottom: 20px;
+    }
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .image {
+        width: 150px;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div id="folders">
+    <!-- Los contenedores de carpeta se generarán aquí -->
+</div>
+
+<script>
+    // Función para cargar las imágenes de una carpeta
+    function cargarImagenes(carpeta) {
+        // Ruta de la carpeta de imágenes
+        const ruta = "Image/" + carpeta + "/";
+
+        // Contenedor de la carpeta actual
+        const contenedorCarpeta = document.createElement("div");
+        contenedorCarpeta.classList.add("folder");
+        contenedorCarpeta.innerHTML = "<h2>Carpeta " + carpeta + "</h2>";
+
+        // Contenedor de imágenes
+        const contenedorImagenes = document.createElement("div");
+        contenedorImagenes.classList.add("image-container");
+
+        // Generar imágenes dentro de la carpeta
+        for (let i = 0; i < 100; i++) { // Suponiendo que hay 10 imágenes en cada carpeta
+            // Crear un elemento de imagen
+            const img = document.createElement("img");
+            img.src = ruta + i + ".png";
+            img.alt = "Imagen " + i;
+
+            // Agregar la imagen al contenedor de imágenes
+            contenedorImagenes.appendChild(img);
+        }
+
+        // Agregar contenedor de imágenes al contenedor de carpeta
+        contenedorCarpeta.appendChild(contenedorImagenes);
+
+        // Agregar contenedor de carpeta al documento
+        document.getElementById("folders").appendChild(contenedorCarpeta);
+    }
+
+    // Cargar imágenes para cada letra del alfabeto (A, B, C, ..., Z)
+    for (let letra = 65; letra <= 90; letra++) {
+        cargarImagenes(String.fromCharCode(letra));
+    }
+</script>
+</body>
+</html>
